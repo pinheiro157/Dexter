@@ -1,65 +1,216 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dexter Morgan - O Analista de Sangue</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;700&display=swap" rel="stylesheet">
-</head>
-<body>
-    <header class="fade-in">
-        <h1>Dexter Morgan</h1>
-        <p>O Analista de Sangue com um Código Particular</p>
-    </header>
+body {
+    font-family: 'Roboto Mono', monospace;
+    margin: 0;
+    background-color: #0d0d0d; /* Cor escura, quase preta */
+    color: #e0e0e0; /* Cinza claro para o texto */
+    line-height: 1.6;
+    overflow-x: hidden; /* Para evitar scroll horizontal indesejado das animações */
+}
 
-    <section id="intro" class="parallax-section">
-        <div class="content">
-            <h2>Bem-vindo ao Lado Sombrio</h2>
-            <p>Descubra o mundo de Dexter Morgan, o amado serial killer de Miami. Um homem de família, um analista forense e... um justiceiro noturno.</p>
-        </div>
-    </section>
+/* Cores da série: Vermelho escuro, cinza escuro, preto, detalhes em branco/prata */
+:root {
+    --primary-red: #8b0000; /* Vermelho sangue escuro */
+    --secondary-gray: #2c2c2c; /* Cinza bem escuro */
+    --text-light: #e0e0e0;
+    --text-dark: #0d0d0d;
+}
 
-    <section id="sobre" class="slide-in-left">
-        <div class="content">
-            <h3>Quem é Dexter?</h3>
-            <p>Dexter é um especialista em padrões de sangue para o Departamento de Polícia de Miami Metro. Mas, sob sua fachada carismática, ele esconde um "Passageiro Sombrio" que o impulsiona a matar outros assassinos que escaparam da justiça.</p>
-        </div>
-        <div class="image-container">
-            </div>
-    </section>
+header {
+    background-color: var(--primary-red);
+    color: white;
+    padding: 2em 0;
+    text-align: center;
+    border-bottom: 5px solid var(--secondary-gray);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
 
-    <section id="codigo" class="zoom-in">
-        <div class="content">
-            <h3>O Código de Harry</h3>
-            <p>Seu pai adotivo, Harry Morgan, ensinou-lhe um código para canalizar seus impulsos homicidas: "Só mate quem merece". Este código é a bússola moral de Dexter, por mais paradoxal que pareça.</p>
-        </div>
-        <div class="image-container">
-            </div>
-    </section>
+header h1 {
+    font-size: 3em;
+    margin-bottom: 0.2em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
 
-    <section id="vitimas" class="fade-in-up">
-        <div class="content">
-            <h3>O Santuário das Vítimas</h3>
-            <p>Para cada uma de suas vítimas, Dexter cria um santuário forense, um palco para seus rituais meticulosos. Ele garante que cada um de seus alvos receba o que ele acredita ser justiça.</p>
-        </div>
-        <div class="image-container">
-            </div>
-    </section>
+header p {
+    font-size: 1.2em;
+    font-style: italic;
+    color: #f0f0f0;
+}
 
-    <section id="familia" class="slide-in-right">
-        <div class="content">
-            <h3>O Lado Humano</h3>
-            <p>Apesar de seu "Passageiro Sombrio", Dexter tenta desesperadamente ter uma vida normal. Ele tem relacionamentos, uma irmã, e busca se encaixar, mesmo que sua verdadeira natureza seja sempre uma sombra.</p>
-        </div>
-        <div class="image-container">
-            </div>
-    </section>
+section {
+    padding: 4em 5%;
+    margin-bottom: 2em;
+    background-color: var(--secondary-gray);
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 3em;
+    flex-wrap: wrap; /* Para responsividade */
+}
 
-    <footer class="fade-in">
-        <p>&copy; 2024 Fã Clube Não Oficial de Dexter. Todos os direitos reservados aos criadores da série.</p>
-    </footer>
+section:nth-of-type(even) {
+    background-color: #1a1a1a; /* Um tom ligeiramente diferente */
+    flex-direction: row-reverse; /* Inverte a ordem da imagem e texto em seções alternadas */
+}
 
-    <script src="script.js"></script>
-</body>
-</html>
+section h2, section h3 {
+    color: var(--primary-red);
+    border-bottom: 2px solid var(--primary-red);
+    padding-bottom: 0.5em;
+    margin-bottom: 1em;
+    font-size: 2em;
+}
+
+section h3 {
+    font-size: 1.8em;
+}
+
+section p {
+    font-size: 1.1em;
+    line-height: 1.8;
+}
+
+.content {
+    flex: 2;
+    min-width: 300px; /* Garante que o texto não fique muito espremido */
+}
+
+.image-container {
+    flex: 1;
+    min-width: 250px;
+    max-width: 400px;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.7);
+    border: 3px solid var(--primary-red);
+}
+
+.image-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease-in-out;
+}
+
+.image-container img:hover {
+    transform: scale(1.05);
+}
+
+footer {
+    text-align: center;
+    padding: 2em 0;
+    background-color: var(--primary-red);
+    color: white;
+    border-top: 5px solid var(--secondary-gray);
+    margin-top: 3em;
+}
+
+/* Animações */
+
+/* Fade In para elementos iniciais */
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 1.5s forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Parallax para a seção de introdução */
+.parallax-section {
+    background-image: url('placeholder-intro.jpg'); /* Substitua por uma imagem de Dexter */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    animation: panBackground 20s infinite alternate linear; /* Animação suave de movimento de fundo */
+}
+
+@keyframes panBackground {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+}
+
+.parallax-section .content {
+    background-color: rgba(0, 0, 0, 0.6); /* Fundo semi-transparente para o texto */
+    padding: 2em;
+    border-radius: 10px;
+    max-width: 800px;
+}
+
+.parallax-section h2 {
+    font-size: 3em;
+    border-bottom: none;
+    color: white;
+}
+
+/* Animação Slide In From Left */
+.slide-in-left {
+    opacity: 0;
+    transform: translateX(-100px);
+    transition: all 1s ease-out;
+}
+
+/* Animação Slide In From Right */
+.slide-in-right {
+    opacity: 0;
+    transform: translateX(100px);
+    transition: all 1s ease-out;
+}
+
+/* Animação Zoom In */
+.zoom-in {
+    opacity: 0;
+    transform: scale(0.8);
+    transition: all 1s ease-out;
+}
+
+/* Animação Fade In Up */
+.fade-in-up {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 1s ease-out;
+}
+
+/* Quando as animações devem ser ativadas (via JavaScript) */
+.active.slide-in-left,
+.active.slide-in-right,
+.active.zoom-in,
+.active.fade-in-up {
+    opacity: 1;
+    transform: none;
+}
+
+/* Responsividade básica */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2.2em;
+    }
+    header p {
+        font-size: 1em;
+    }
+    section {
+        padding: 2em 3%;
+        flex-direction: column; /* Em telas menores, os itens empilham */
+    }
+    section:nth-of-type(even) {
+        flex-direction: column;
+    }
+    .content, .image-container {
+        min-width: unset;
+        width: 100%;
+    }
+    .parallax-section h2 {
+        font-size: 2em;
+    }
+}
